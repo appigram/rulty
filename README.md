@@ -1,0 +1,2 @@
+# rulty
+### a Sails application
