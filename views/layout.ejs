@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <!--
-        For demonstration purposes, the `title` is dynamically set here based on
-        your `sails.config.appName` to show that you can inject data into layouts
-        exactly the same way as with your other view templates.
-    -->
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Aviators - byaviators.com">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.css" type="text/css">
+    <link rel="stylesheet" href="/libraries/chosen/chosen.css" type="text/css">
+    <link rel="stylesheet" href="/libraries/bootstrap-fileupload/bootstrap-fileupload.css" type="text/css">
+    <link rel="stylesheet" href="/libraries/jquery-ui-1.10.2.custom/css/ui-lightness/jquery-ui-1.10.2.custom.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/realia-blue.css" type="text/css" id="color-variant-default">
+    <link rel="stylesheet" href="#" type="text/css" id="color-variant">
+
     <title><%- title %></title>
+</head>
+
+
+
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -37,7 +50,107 @@
 
   <body>
 
-    <!-- Include the view file for the current controller/route -->
+    <<div id="wrapper-outer" >
+    <div id="wrapper">
+        <div id="wrapper-inner">
+
+            <!-- HEADER -->
+            <div id="header-wrapper">
+                <div id="header">
+                    <div id="header-inner">
+                        <div class="container">
+                            <div class="navbar">
+                                <div class="navbar-inner">
+                                    <div class="row">
+                                        <div class="logo-wrapper span4">
+                                            <a href="#nav" class="hidden-desktop" id="btn-nav">Переключить навигацию</a>
+
+                                            <div class="logo">
+                                                <a href="" title="Home">
+                                                    <img src="img/logo.png" alt="Home">
+                                                </a>
+                                            </div><!-- /.logo -->
+
+                                            <div class="site-name">
+                                                <a href="/" title="Home" class="brand">Rulty</a>
+                                            </div><!-- /.site-name -->
+
+                                            <div class="site-slogan">
+                                                <span>Недвижимость и аренда</br>это легко</span>
+                                            </div><!-- /.site-slogan -->
+                                        </div><!-- /.logo-wrapper -->
+
+                                        <div class="info">
+                                            <div class="site-email">
+                                                <a href="mailto:mail@rulty.com">mail@rulty.com</a>
+                                            </div><!-- /.site-email -->
+
+                                            <div class="site-phone">
+                                                <span>+7-987-463-7777</span>
+                                            </div><!-- /.site-phone -->
+                                        </div><!-- /.info -->
+
+                                        <a class="btn btn-primary btn-large list-your-property arrow-right" href="list-your-property.html">Добавь свою собственность</a>
+                                    </div><!-- /.row -->
+                                </div><!-- /.navbar-inner -->
+                            </div><!-- /.navbar -->
+                        </div><!-- /.container -->
+                    </div><!-- /#header-inner -->
+                </div><!-- /#header -->
+            </div><!-- /#header-wrapper -->
+
+            <!-- NAVIGATION -->
+            <div id="navigation">
+                <div class="container">
+                    <div class="navigation-wrapper">
+                        <div class="navigation clearfix-normal">
+
+                            <ul class="nav">
+                                <li>
+                                    <a href="/">Домашняя страница</a>
+                                </li>
+                                <li class="menuparent">
+                                    <span class="menuparent nolink">Составление списка</span>
+                                    <ul>
+                                        <li><a href="listing-grid-filter.html">Список сетка с фильтром</a></li>
+                                        <li><a href="listing-rows-filter.html" >Список строка с фильтром</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menuparent">
+                                    <span class="menuparent nolink">Страницы</span>
+                                    <ul>
+                                        <li><a href="/about">О нас</a></li>
+                                        <li><a href="/">Наши агенты</a></li>
+                                        <li><a href="/">FAQ</a></li>
+                                        <li><a href="/">Shortcodes</a></li>
+                                        <li class="menuparent">
+                                            <span class="menuparent nolink">Другой уровень</span>
+                                            <ul>
+                                                <li><a href="/">Связаться с нами</a></li>
+                                                <li><a href="/">Система сеток</a></li>
+                                                <li><a href="/">Типография</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="404.html">404 page</a></li>
+                                    </ul>
+                                </li>
+                                <li  >
+                                    <a  href="/">Цены</a>    
+                                </li>
+                                <li><a href="/">Связаться с нами</a></li>
+                            </ul><!-- /.nav -->
+
+                            
+                            <form method="get" class="site-search" action="?">
+                                <div class="input-append">
+                                    <input title="Введите то, что хотите найти" class="search-query span2 form-text" placeholder="Поиск" type="text" name="">
+                                    <button type="submit" class="btn"><i class="icon-search"></i></button>
+                                </div><!-- /.input-append -->
+                            </form><!-- /.site-search -->
+                        </div><!-- /.navigation -->
+                    </div><!-- /.navigation-wrapper -->
+                </div><!-- /.container -->
+            </div><!-- /.navigation -->
     <%- body %>
 
 
@@ -61,6 +174,22 @@
     <!-- Your scripts here? -->
     <!-- Your scripts here? -->
     <!-- Your scripts here? -->
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=true"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.ezmark.js"></script>
+<script type="text/javascript" src="/js/jquery.currency.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/retina.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/carousel.js"></script>
+<script type="text/javascript" src="/js/gmap3.min.js"></script>
+<script type="text/javascript" src="/js/gmap3.infobox.min.js"></script>
+<script type="text/javascript" src="/libraries/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>
+<script type="text/javascript" src="/libraries/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="/libraries/iosslider/_src/jquery.iosslider.min.js"></script>
+<script type="text/javascript" src="/libraries/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<script type="text/javascript" src="/js/realia.js"></script>
 
 
     <!--
